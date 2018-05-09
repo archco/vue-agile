@@ -11,6 +11,7 @@
 
         <ul ref="dots" v-if="settings.dots && !settings.unagile" class="agile__dots">
             <li v-for="n in slidesCount" class="agile__dot"
+                :key="n"
                 :class="{'agile__dot--current': n - 1 === currentSlide}"
                 @mouseover="handleMouseOver('dot')" @mouseout="handleMouseOut('dot')">
 
@@ -567,7 +568,7 @@
     }
 </script>
 
-<style lang="scss" type="text/scss">
+<style lang="scss">
     .agile {
         position: relative;
 
